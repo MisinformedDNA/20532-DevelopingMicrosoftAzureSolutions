@@ -1,5 +1,4 @@
 ﻿using Contoso.Events.Models;
-using System.Configuration;
 using System.Data.Entity;
 
 namespace Contoso.Events.Data
@@ -13,9 +12,7 @@ namespace Contoso.Events.Data
 
         public EventsContext()
             : base("EventsContextConnectionString")
-        {
-            Database.CommandTimeout = int.Parse(ConfigurationManager.AppSettings["Consoso.Events.Data.CommandTimeoutInSeconds"]);
-        }
+        { }
 
         public DbSet<Event> Events { get; set; }
 
